@@ -1,0 +1,225 @@
+/*  @import "css-tei-framework/tei_oxygen.css"; */
+
+TEI, TEI\.2 {
+    background-color: #FDFDFD;
+}
+
+body {
+    display:block;
+    margin: 0 auto;
+    width: 1024px;
+    background-color: #FFFFFF;
+    padding: 2em;
+    border: 1px solid #f1f1f1;
+}
+
+/* Transkriptionsansicht */
+
+teiHeader {
+    display:block;
+    margin: 2em auto;
+    width: 1024px;
+    background-color: azure;
+    padding: 1em;
+
+}
+
+titleStmt title {
+    display:block;
+    font-weight:bold;
+    font-size:x-large;
+    margin-bottom:20px;
+}
+
+sourceDesc {
+    display:none;
+}
+
+listWit witness {
+    display: none;
+}
+
+profileDesc, seriesStmt, sourceDesc listBibl, msDesc, editor, author, funder, editionStmt {
+    display:none;
+}
+
+revisionDesc {
+    content: oxy_xpath("concat('revision - ', '     date     ', ' | ', ' who ', ' | ', ' status', ' | ', ' text ')");
+    text-decoration: underline;
+    padding: .5em;
+}
+
+revisionDesc change {
+    display: block;
+    content: oxy_xpath("concat(name(), '  - ', @date, ' | ', @who, ' | ', @status, ' | ', ./text())");
+    text-decoration: none;
+}
+
+publisher, pubPlace, licence {
+    display:none;
+}
+
+publicationStmt {
+    display:none;
+}
+
+availability {
+    display:none;
+}
+
+
+publicationStmt {
+    display:none;
+}
+
+encodingDesc {
+    display: none;
+}
+
+/* publicationStmt idno[subtype='legalkraus']:after {
+    display:inline-block;
+    content:' [ansehen]'; 
+    link:oxy_xpath("concat('https://legalkraus.acdh-dev.oeaw.ac.at/manage.html?id=',substring-after(./text(),'https://legalkraus.acdh.oeaw.ac.at/id/'))");
+}
+
+publicationStmt idno[subtype='krausonline']:after {
+    display:inline-block;
+    content:' [ansehen]'; 
+    link:oxy_xpath("./text()");
+} */
+
+/* publicationStmt idno[subtype='transkribus'] {
+    display:none;
+} */
+
+
+
+
+/*  Transkription */
+
+/* lb {
+    content: "\A";
+} */
+
+
+/* lb:after {
+    display:inline-block;
+    content:oxy_xpath("count(./preceding::lb)+1");
+    font-size:xx-small;
+    padding-right:30px;
+    color:gray;
+}
+
+lb[break='no']:before {
+    display:inline-block;
+    content:"-";
+    background-color:orange;
+} */
+
+pb {
+    display:block;
+    content:oxy_xpath("./@n");
+    color: #ff66ff;
+    margin-top:16px;
+    margin-bottom:12px;
+    
+}
+
+author, principal, editor, respStmt {
+    display: blocK;
+}
+
+author:before, principal:before, editor:before {
+    content: oxy_xpath("concat(local-name(.),': ')")
+}
+
+
+respStmt:before {
+    content: oxy_xpath("concat(./resp,': ')")
+}
+
+respStmt:after {
+    content: oxy_xpath("concat(' [',./name/@ref,']')")
+}
+
+respStmt resp {
+    display: none;
+}
+
+lb {
+    display:block;
+    content:oxy_xpath("concat('[',./@n,']')");
+    color: #ff66ff;
+    margin-top:16px;
+    margin-bottom:12px;
+    
+} 
+
+date {
+    color: #ffc000;
+}
+
+quote {
+    color: #00b0f0;
+}
+
+lem {
+    color: #cc00cc;
+}
+
+foreign {
+    color: #833c0b;
+}
+
+rs[type='person'] {
+    color: #ff0000;
+}
+
+rs[type='text'] {
+    color: #0000ff;
+}
+
+rs[type='school'] {
+  color:#7030a0;      
+}
+
+rs[type='place'] {
+    color: #00b050;
+}
+
+seg[type = 'excerpt'] {
+    background-color: #EAFFDC;
+}
+
+rs[type='topicDiscussion'] {
+    background-color: #FDFFDC;
+}
+
+
+hi[rendition="#smallcaps"] {
+    letter-spacing: 3pt;
+}
+
+note
+
+note[type='gloss'] {
+    color: #806000;    
+}
+
+
+ab {
+    display: block;
+}
+
+milestone:before  {
+    content:oxy_xpath("@n");
+    color: #D8D8D8;
+}
+
+mentioned {
+    font-style: italic;
+}
+
+abbr {
+    text-decoration: underline;
+}

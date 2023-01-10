@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../803_RNG-schematron/1.0.0/schema.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title type="main"><?DO-NOT-CHANGE--POPULATED-FROM-DATABASE?></title>
+				<author><?DO-NOT-CHANGE--POPULATED-FROM-DATABASE?></author>
+				<principal>…</principal>
+				<funder>…</funder>
+				<respStmt>
+					<resp></resp>
+					<name ref="db:p1">…</name>
+				</respStmt>
+			</titleStmt>
+			<editionStmt>
+				<p>…</p>
+			</editionStmt>
+			<publicationStmt>
+				<p>not published yet</p>
+			</publicationStmt>
+			<sourceDesc><p><?DO-NOT-CHANGE--POPULATED-FROM-DATABASE?></p></sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<tagsDecl partial="true">
+				<rendition xml:id="i" scheme="css">font-style:italics;</rendition>
+				<rendition xml:id="u" scheme="css">text-decoration:underline;</rendition>
+				<rendition xml:id="b" scheme="css">font-weight:bold;</rendition>
+			</tagsDecl>
+			<projectDesc>
+				<p>…</p>
+			</projectDesc>
+			<variantEncoding method="double-end-point" location="external"/>
+			<listPrefixDef>
+				<prefixDef ident="db"
+					matchPattern="^(.+)$"
+					replacementPattern="https://database.com/api/entity/$1/">
+					<p>In the context of the project, references using the "db" prefix
+						point to the project's database instance.</p>
+				</prefixDef>
+			</listPrefixDef>
+		</encodingDesc>
+		<profileDesc>
+			<langUsage><p>…</p></langUsage>
+		</profileDesc>
+		<revisionDesc status="draft">
+			<change when="2023-01-09" who="db:p123" status="draft">created document</change>
+		</revisionDesc>
+	</teiHeader>
+	<text>
+		<body>
+			<ab xml:id="ab001"><rs type=""></rs></ab>
+		</body>
+	</text>
+</TEI>
